@@ -69,6 +69,12 @@ namespace Lab7
                             Console.WriteLine($"{Shapes[Counter - 1].GetType().Name} Added Successfully");
                             break;
                         case '2':
+                            if (Shapes[Counter] is null)
+                            {
+                                Console.ForegroundColor = ConsoleColor.Red;
+                                Console.WriteLine("First Add Shape to Calculate area");
+                                continue;
+                            }
                             Console.ForegroundColor = ConsoleColor.DarkGreen;
                             Console.WriteLine($"\n{Shapes[Counter - 1].GetType().Name} Area's= {Shapes[Counter - 1].CalArea()}\n");
                             break;
